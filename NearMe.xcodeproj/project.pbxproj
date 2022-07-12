@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D74B134287E40F500F835DC /* NearMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B133287E40F500F835DC /* NearMeApp.swift */; };
+		3D74B136287E40F500F835DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B135287E40F500F835DC /* ContentView.swift */; };
+		3D74B138287E40F600F835DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D74B137287E40F600F835DC /* Assets.xcassets */; };
+		3D74B13B287E40F600F835DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D74B13A287E40F600F835DC /* Preview Assets.xcassets */; };
+		3D74B145287E40F600F835DC /* NearMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B144287E40F600F835DC /* NearMeTests.swift */; };
+		3D74B14F287E40F600F835DC /* NearMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B14E287E40F600F835DC /* NearMeUITests.swift */; };
+		3D74B151287E40F600F835DC /* NearMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D74B141287E40F600F835DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D74B128287E40F500F835DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D74B12F287E40F500F835DC;
+			remoteInfo = NearMe;
+		};
+		3D74B14B287E40F600F835DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D74B128287E40F500F835DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D74B12F287E40F500F835DC;
+			remoteInfo = NearMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D74B130287E40F500F835DC /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D74B133287E40F500F835DC /* NearMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeApp.swift; sourceTree = "<group>"; };
+		3D74B135287E40F500F835DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3D74B137287E40F600F835DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D74B13A287E40F600F835DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3D74B140287E40F600F835DC /* NearMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D74B144287E40F600F835DC /* NearMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeTests.swift; sourceTree = "<group>"; };
+		3D74B14A287E40F600F835DC /* NearMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D74B14E287E40F600F835DC /* NearMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITests.swift; sourceTree = "<group>"; };
+		3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D74B12D287E40F500F835DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D74B13D287E40F600F835DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D74B147287E40F600F835DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D74B127287E40F500F835DC = {
+			isa = PBXGroup;
+			children = (
+				3D74B132287E40F500F835DC /* NearMe */,
+				3D74B143287E40F600F835DC /* NearMeTests */,
+				3D74B14D287E40F600F835DC /* NearMeUITests */,
+				3D74B131287E40F500F835DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D74B131287E40F500F835DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D74B130287E40F500F835DC /* NearMe.app */,
+				3D74B140287E40F600F835DC /* NearMeTests.xctest */,
+				3D74B14A287E40F600F835DC /* NearMeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D74B132287E40F500F835DC /* NearMe */ = {
+			isa = PBXGroup;
+			children = (
+				3D74B133287E40F500F835DC /* NearMeApp.swift */,
+				3D74B135287E40F500F835DC /* ContentView.swift */,
+				3D74B137287E40F600F835DC /* Assets.xcassets */,
+				3D74B139287E40F600F835DC /* Preview Content */,
+			);
+			path = NearMe;
+			sourceTree = "<group>";
+		};
+		3D74B139287E40F600F835DC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3D74B13A287E40F600F835DC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3D74B143287E40F600F835DC /* NearMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D74B144287E40F600F835DC /* NearMeTests.swift */,
+			);
+			path = NearMeTests;
+			sourceTree = "<group>";
+		};
+		3D74B14D287E40F600F835DC /* NearMeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3D74B14E287E40F600F835DC /* NearMeUITests.swift */,
+				3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */,
+			);
+			path = NearMeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D74B12F287E40F500F835DC /* NearMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D74B154287E40F600F835DC /* Build configuration list for PBXNativeTarget "NearMe" */;
+			buildPhases = (
+				3D74B12C287E40F500F835DC /* Sources */,
+				3D74B12D287E40F500F835DC /* Frameworks */,
+				3D74B12E287E40F500F835DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NearMe;
+			productName = NearMe;
+			productReference = 3D74B130287E40F500F835DC /* NearMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D74B13F287E40F600F835DC /* NearMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D74B157287E40F600F835DC /* Build configuration list for PBXNativeTarget "NearMeTests" */;
+			buildPhases = (
+				3D74B13C287E40F600F835DC /* Sources */,
+				3D74B13D287E40F600F835DC /* Frameworks */,
+				3D74B13E287E40F600F835DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D74B142287E40F600F835DC /* PBXTargetDependency */,
+			);
+			name = NearMeTests;
+			productName = NearMeTests;
+			productReference = 3D74B140287E40F600F835DC /* NearMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D74B149287E40F600F835DC /* NearMeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D74B15A287E40F600F835DC /* Build configuration list for PBXNativeTarget "NearMeUITests" */;
+			buildPhases = (
+				3D74B146287E40F600F835DC /* Sources */,
+				3D74B147287E40F600F835DC /* Frameworks */,
+				3D74B148287E40F600F835DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D74B14C287E40F600F835DC /* PBXTargetDependency */,
+			);
+			name = NearMeUITests;
+			productName = NearMeUITests;
+			productReference = 3D74B14A287E40F600F835DC /* NearMeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D74B128287E40F500F835DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					3D74B12F287E40F500F835DC = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					3D74B13F287E40F600F835DC = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 3D74B12F287E40F500F835DC;
+					};
+					3D74B149287E40F600F835DC = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 3D74B12F287E40F500F835DC;
+					};
+				};
+			};
+			buildConfigurationList = 3D74B12B287E40F500F835DC /* Build configuration list for PBXProject "NearMe" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D74B127287E40F500F835DC;
+			productRefGroup = 3D74B131287E40F500F835DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D74B12F287E40F500F835DC /* NearMe */,
+				3D74B13F287E40F600F835DC /* NearMeTests */,
+				3D74B149287E40F600F835DC /* NearMeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D74B12E287E40F500F835DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D74B13B287E40F600F835DC /* Preview Assets.xcassets in Resources */,
+				3D74B138287E40F600F835DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D74B13E287E40F600F835DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D74B148287E40F600F835DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D74B12C287E40F500F835DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D74B136287E40F500F835DC /* ContentView.swift in Sources */,
+				3D74B134287E40F500F835DC /* NearMeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D74B13C287E40F600F835DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D74B145287E40F600F835DC /* NearMeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D74B146287E40F600F835DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D74B151287E40F600F835DC /* NearMeUITestsLaunchTests.swift in Sources */,
+				3D74B14F287E40F600F835DC /* NearMeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D74B142287E40F600F835DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D74B12F287E40F500F835DC /* NearMe */;
+			targetProxy = 3D74B141287E40F600F835DC /* PBXContainerItemProxy */;
+		};
+		3D74B14C287E40F600F835DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D74B12F287E40F500F835DC /* NearMe */;
+			targetProxy = 3D74B14B287E40F600F835DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3D74B152287E40F600F835DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D74B153287E40F600F835DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D74B155287E40F600F835DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NearMe/Preview Content\"";
+				DEVELOPMENT_TEAM = 5PAN36949Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicobaianz.example.NearMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D74B156287E40F600F835DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NearMe/Preview Content\"";
+				DEVELOPMENT_TEAM = 5PAN36949Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicobaianz.example.NearMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D74B158287E40F600F835DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PAN36949Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicobaianz.example.NearMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearMe.app/NearMe";
+			};
+			name = Debug;
+		};
+		3D74B159287E40F600F835DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PAN36949Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicobaianz.example.NearMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearMe.app/NearMe";
+			};
+			name = Release;
+		};
+		3D74B15B287E40F600F835DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PAN36949Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicobaianz.example.NearMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NearMe;
+			};
+			name = Debug;
+		};
+		3D74B15C287E40F600F835DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PAN36949Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicobaianz.example.NearMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NearMe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D74B12B287E40F500F835DC /* Build configuration list for PBXProject "NearMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D74B152287E40F600F835DC /* Debug */,
+				3D74B153287E40F600F835DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D74B154287E40F600F835DC /* Build configuration list for PBXNativeTarget "NearMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D74B155287E40F600F835DC /* Debug */,
+				3D74B156287E40F600F835DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D74B157287E40F600F835DC /* Build configuration list for PBXNativeTarget "NearMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D74B158287E40F600F835DC /* Debug */,
+				3D74B159287E40F600F835DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D74B15A287E40F600F835DC /* Build configuration list for PBXNativeTarget "NearMeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D74B15B287E40F600F835DC /* Debug */,
+				3D74B15C287E40F600F835DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D74B128287E40F500F835DC /* Project object */;
+}
