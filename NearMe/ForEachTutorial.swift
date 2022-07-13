@@ -14,7 +14,7 @@ struct ForEachTutorial: View {
              Array(repeating: .init(.flexible()), count: 3)
     
     @State private var categoryColor: Color = .red
-    @State private var categoryImage: UIImage = UIImage(named: "Gas_Station")!
+    @State private var categoryImage: UIImage = UIImage(named: "icon_gas_station")!
     @State private var categoryTitle: String = "Default"
     
     
@@ -36,7 +36,7 @@ struct ForEachTutorial: View {
                                 .foregroundColor(Color(.sRGB, red: 0.960, green: 0.866, blue: 0.458, opacity: 0.5))
                                 .frame(width: 110, height: 140, alignment: .center)
                             VStack {
-                                Image("Gas_Station")
+                                Image("icon_gas_station")
                                     .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0))
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 75, height: 75, alignment: .center)
