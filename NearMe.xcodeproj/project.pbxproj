@@ -15,7 +15,6 @@
 		3D74B14F287E40F600F835DC /* NearMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B14E287E40F600F835DC /* NearMeUITests.swift */; };
 		3D74B151287E40F600F835DC /* NearMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */; };
 		3D74B15F287E424700F835DC /* ForEachTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B15D287E424700F835DC /* ForEachTutorial.swift */; };
-		3D74B160287E424700F835DC /* SwiftUiTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B15E287E424700F835DC /* SwiftUiTutorialApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +46,6 @@
 		3D74B14E287E40F600F835DC /* NearMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITests.swift; sourceTree = "<group>"; };
 		3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D74B15D287E424700F835DC /* ForEachTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForEachTutorial.swift; sourceTree = "<group>"; };
-		3D74B15E287E424700F835DC /* SwiftUiTutorialApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUiTutorialApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +99,6 @@
 				3D74B133287E40F500F835DC /* NearMeApp.swift */,
 				3D74B135287E40F500F835DC /* ContentView.swift */,
 				3D74B15D287E424700F835DC /* ForEachTutorial.swift */,
-				3D74B15E287E424700F835DC /* SwiftUiTutorialApp.swift */,
 				3D74B137287E40F600F835DC /* Assets.xcassets */,
 				3D74B139287E40F600F835DC /* Preview Content */,
 			);
@@ -266,7 +263,6 @@
 				3D74B136287E40F500F835DC /* ContentView.swift in Sources */,
 				3D74B15F287E424700F835DC /* ForEachTutorial.swift in Sources */,
 				3D74B134287E40F500F835DC /* NearMeApp.swift in Sources */,
-				3D74B160287E424700F835DC /* SwiftUiTutorialApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
