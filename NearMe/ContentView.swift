@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
     private var isHidden: Bool = false
@@ -13,6 +14,33 @@ struct ContentView: View {
     @State private var swiftyColor: Color = .red
     @State private var fontSize: Double = 10
     
+    @ObservedObject private var locationManager = LocationManager()
+    
+    @State private var search: String = ""
+    
+    @State private var landmarks = [Landmark]()
+    
+    private func getNearbyLandmarks() {
+        
+        guard let location = self.locationManager.location else {return}
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = self.search
+        request.region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000
+        )
+        
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            
+            guard let response = response, error == nil else {return}
+            
+            let mapItems = response.mapItems
+            self.landmarks = mapItems.map {
+                Landmark(placemark: $0.placemark)
+            }
+        }
+        
+    }
     
     var body: some View {
 //        VStack {
@@ -28,19 +56,33 @@ struct ContentView: View {
 //
 //        }
         
-        VStack(spacing: 70.0) {
-            SwiftyControls(swiftyColor: $swiftyColor, fontSize: $fontSize)
+        ZStack(alignment: .top) {
             
-            HStack(alignment: .center, spacing: 5.0) {
-                Button("Continue", action: {})
-                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
-                Button("More details", action: {})
-                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
-                Button("Cancel", action: {})
-                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
-            }
+            
+            NearMeMapView(landmarks: self.landmarks)
+                .ignoresSafeArea()
+            
+            TextField("Search", text: self.$search, onEditingChanged: { _ in }) {
+                
+                self.getNearbyLandmarks()
+                
+            }.textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .offset(y: 44)
         }
-        .padding(.horizontal, 20.0)
+//        VStack(spacing: 70.0) {
+//            SwiftyControls(swiftyColor: $swiftyColor, fontSize: $fontSize)
+//
+//            HStack(alignment: .center, spacing: 5.0) {
+//                Button("Continue", action: {})
+//                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
+//                Button("More details", action: {})
+//                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
+//                Button("Cancel", action: {})
+//                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
+//            }
+//        }
+//        .padding(.horizontal, 20.0)
         
         
     }

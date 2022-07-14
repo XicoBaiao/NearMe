@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D390D5B287F7F840075150A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D390D5A287F7F840075150A /* MapView.swift */; };
+		3D390D5E287F93D90075150A /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D390D5D287F93D90075150A /* GoogleMapsView.swift */; };
+		3D390D60287FA6430075150A /* NearMeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D390D5F287FA6430075150A /* NearMeMapView.swift */; };
+		3D390D63287FA7750075150A /* NearMeMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D390D62287FA7750075150A /* NearMeMapCoordinator.swift */; };
+		3D390D66287FA8810075150A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D390D65287FA8810075150A /* LocationManager.swift */; };
+		3D390D69287FB50B0075150A /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D390D68287FB50B0075150A /* Landmark.swift */; };
+		3D390D6B287FB5B50075150A /* LandmarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D390D6A287FB5B50075150A /* LandmarkAnnotation.swift */; };
 		3D74B134287E40F500F835DC /* NearMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B133287E40F500F835DC /* NearMeApp.swift */; };
 		3D74B136287E40F500F835DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B135287E40F500F835DC /* ContentView.swift */; };
 		3D74B138287E40F600F835DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D74B137287E40F600F835DC /* Assets.xcassets */; };
@@ -15,6 +22,9 @@
 		3D74B14F287E40F600F835DC /* NearMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B14E287E40F600F835DC /* NearMeUITests.swift */; };
 		3D74B151287E40F600F835DC /* NearMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */; };
 		3D74B15F287E424700F835DC /* ForEachTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B15D287E424700F835DC /* ForEachTutorial.swift */; };
+		60CC9F4A73FFEED2C22A4FA7 /* Pods_NearMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 150BD13CA66882325027E9CD /* Pods_NearMeTests.framework */; };
+		C6FB1900618F1109201B1874 /* Pods_NearMe_NearMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3EC301C1143D67D6CB7E4D7 /* Pods_NearMe_NearMeUITests.framework */; };
+		CC8202951471DEB4E2B76F0C /* Pods_NearMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3A6187B3FC8D7AB9F16367 /* Pods_NearMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		150BD13CA66882325027E9CD /* Pods_NearMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2510943C59D1650C3931DBFC /* Pods-NearMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.release.xcconfig"; path = "Target Support Files/Pods-NearMe/Pods-NearMe.release.xcconfig"; sourceTree = "<group>"; };
+		3D390D5A287F7F840075150A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		3D390D5C287F84580075150A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3D390D5D287F93D90075150A /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
+		3D390D5F287FA6430075150A /* NearMeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeMapView.swift; sourceTree = "<group>"; };
+		3D390D62287FA7750075150A /* NearMeMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeMapCoordinator.swift; sourceTree = "<group>"; };
+		3D390D65287FA8810075150A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		3D390D68287FB50B0075150A /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		3D390D6A287FB5B50075150A /* LandmarkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnnotation.swift; sourceTree = "<group>"; };
 		3D74B130287E40F500F835DC /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D74B133287E40F500F835DC /* NearMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeApp.swift; sourceTree = "<group>"; };
 		3D74B135287E40F500F835DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +66,13 @@
 		3D74B14E287E40F600F835DC /* NearMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITests.swift; sourceTree = "<group>"; };
 		3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D74B15D287E424700F835DC /* ForEachTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForEachTutorial.swift; sourceTree = "<group>"; };
+		78442CB9702A57C483883AAC /* Pods-NearMe-NearMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe-NearMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-NearMe-NearMeUITests/Pods-NearMe-NearMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		813591DFB876609CE708D6CA /* Pods-NearMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMeTests.release.xcconfig"; path = "Target Support Files/Pods-NearMeTests/Pods-NearMeTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB3A6187B3FC8D7AB9F16367 /* Pods_NearMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9C44A5F25FE83F4EDA36EC8 /* Pods-NearMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.debug.xcconfig"; path = "Target Support Files/Pods-NearMe/Pods-NearMe.debug.xcconfig"; sourceTree = "<group>"; };
+		F3EC301C1143D67D6CB7E4D7 /* Pods_NearMe_NearMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearMe_NearMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F47DC02EC778C3C8D515174E /* Pods-NearMe-NearMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe-NearMeUITests.release.xcconfig"; path = "Target Support Files/Pods-NearMe-NearMeUITests/Pods-NearMe-NearMeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FC8898ACD79F022BC25DC3C7 /* Pods-NearMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMeTests.debug.xcconfig"; path = "Target Support Files/Pods-NearMeTests/Pods-NearMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8202951471DEB4E2B76F0C /* Pods_NearMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60CC9F4A73FFEED2C22A4FA7 /* Pods_NearMeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,12 +96,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6FB1900618F1109201B1874 /* Pods_NearMe_NearMeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D390D61287FA75A0075150A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3D390D62287FA7750075150A /* NearMeMapCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3D390D64287FA8730075150A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3D390D65287FA8810075150A /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3D390D67287FB4FD0075150A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D390D68287FB50B0075150A /* Landmark.swift */,
+				3D390D6A287FB5B50075150A /* LandmarkAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3D74B127287E40F500F835DC = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +135,8 @@
 				3D74B143287E40F600F835DC /* NearMeTests */,
 				3D74B14D287E40F600F835DC /* NearMeUITests */,
 				3D74B131287E40F500F835DC /* Products */,
+				E96A466EDC27184764E50B79 /* Pods */,
+				41CA13551A97D15781D1642B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,11 +153,18 @@
 		3D74B132287E40F500F835DC /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				3D390D67287FB4FD0075150A /* Models */,
+				3D390D64287FA8730075150A /* Managers */,
+				3D390D61287FA75A0075150A /* Coordinators */,
+				3D390D5C287F84580075150A /* Info.plist */,
 				3D74B133287E40F500F835DC /* NearMeApp.swift */,
 				3D74B135287E40F500F835DC /* ContentView.swift */,
 				3D74B15D287E424700F835DC /* ForEachTutorial.swift */,
 				3D74B137287E40F600F835DC /* Assets.xcassets */,
 				3D74B139287E40F600F835DC /* Preview Content */,
+				3D390D5A287F7F840075150A /* MapView.swift */,
+				3D390D5D287F93D90075150A /* GoogleMapsView.swift */,
+				3D390D5F287FA6430075150A /* NearMeMapView.swift */,
 			);
 			path = NearMe;
 			sourceTree = "<group>";
@@ -130,6 +194,29 @@
 			path = NearMeUITests;
 			sourceTree = "<group>";
 		};
+		41CA13551A97D15781D1642B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB3A6187B3FC8D7AB9F16367 /* Pods_NearMe.framework */,
+				F3EC301C1143D67D6CB7E4D7 /* Pods_NearMe_NearMeUITests.framework */,
+				150BD13CA66882325027E9CD /* Pods_NearMeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E96A466EDC27184764E50B79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9C44A5F25FE83F4EDA36EC8 /* Pods-NearMe.debug.xcconfig */,
+				2510943C59D1650C3931DBFC /* Pods-NearMe.release.xcconfig */,
+				78442CB9702A57C483883AAC /* Pods-NearMe-NearMeUITests.debug.xcconfig */,
+				F47DC02EC778C3C8D515174E /* Pods-NearMe-NearMeUITests.release.xcconfig */,
+				FC8898ACD79F022BC25DC3C7 /* Pods-NearMeTests.debug.xcconfig */,
+				813591DFB876609CE708D6CA /* Pods-NearMeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D74B154287E40F600F835DC /* Build configuration list for PBXNativeTarget "NearMe" */;
 			buildPhases = (
+				D1C481411E43045D59E49632 /* [CP] Check Pods Manifest.lock */,
 				3D74B12C287E40F500F835DC /* Sources */,
 				3D74B12D287E40F500F835DC /* Frameworks */,
 				3D74B12E287E40F500F835DC /* Resources */,
+				91BD4402E2E4FC0D2471D389 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D74B157287E40F600F835DC /* Build configuration list for PBXNativeTarget "NearMeTests" */;
 			buildPhases = (
+				125897CB10A941FA532D8F16 /* [CP] Check Pods Manifest.lock */,
 				3D74B13C287E40F600F835DC /* Sources */,
 				3D74B13D287E40F600F835DC /* Frameworks */,
 				3D74B13E287E40F600F835DC /* Resources */,
@@ -172,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D74B15A287E40F600F835DC /* Build configuration list for PBXNativeTarget "NearMeUITests" */;
 			buildPhases = (
+				3441CB66ED1CA63F481BD659 /* [CP] Check Pods Manifest.lock */,
 				3D74B146287E40F600F835DC /* Sources */,
 				3D74B147287E40F600F835DC /* Frameworks */,
 				3D74B148287E40F600F835DC /* Resources */,
+				DA7B809E05BA2B29046C3353 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,13 +347,123 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		125897CB10A941FA532D8F16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NearMeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3441CB66ED1CA63F481BD659 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NearMe-NearMeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91BD4402E2E4FC0D2471D389 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NearMe/Pods-NearMe-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NearMe/Pods-NearMe-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NearMe/Pods-NearMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1C481411E43045D59E49632 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NearMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA7B809E05BA2B29046C3353 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NearMe-NearMeUITests/Pods-NearMe-NearMeUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NearMe-NearMeUITests/Pods-NearMe-NearMeUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NearMe-NearMeUITests/Pods-NearMe-NearMeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D74B12C287E40F500F835DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3D74B136287E40F500F835DC /* ContentView.swift in Sources */,
+				3D390D60287FA6430075150A /* NearMeMapView.swift in Sources */,
+				3D390D6B287FB5B50075150A /* LandmarkAnnotation.swift in Sources */,
+				3D390D5E287F93D90075150A /* GoogleMapsView.swift in Sources */,
+				3D390D5B287F7F840075150A /* MapView.swift in Sources */,
+				3D390D66287FA8810075150A /* LocationManager.swift in Sources */,
+				3D390D69287FB50B0075150A /* Landmark.swift in Sources */,
 				3D74B15F287E424700F835DC /* ForEachTutorial.swift in Sources */,
+				3D390D63287FA7750075150A /* NearMeMapCoordinator.swift in Sources */,
 				3D74B134287E40F500F835DC /* NearMeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +617,7 @@
 		};
 		3D74B155287E40F600F835DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9C44A5F25FE83F4EDA36EC8 /* Pods-NearMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -424,6 +627,9 @@
 				DEVELOPMENT_TEAM = 5PAN36949Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NearMe/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location to show it on the map.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,6 +650,7 @@
 		};
 		3D74B156287E40F600F835DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2510943C59D1650C3931DBFC /* Pods-NearMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -453,6 +660,9 @@
 				DEVELOPMENT_TEAM = 5PAN36949Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NearMe/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location to show it on the map.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -473,6 +683,7 @@
 		};
 		3D74B158287E40F600F835DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC8898ACD79F022BC25DC3C7 /* Pods-NearMeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +704,7 @@
 		};
 		3D74B159287E40F600F835DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 813591DFB876609CE708D6CA /* Pods-NearMeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -513,6 +725,7 @@
 		};
 		3D74B15B287E40F600F835DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78442CB9702A57C483883AAC /* Pods-NearMe-NearMeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -531,6 +744,7 @@
 		};
 		3D74B15C287E40F600F835DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F47DC02EC778C3C8D515174E /* Pods-NearMe-NearMeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
