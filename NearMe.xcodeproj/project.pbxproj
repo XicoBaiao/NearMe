@@ -15,6 +15,7 @@
 		3D74B14F287E40F600F835DC /* NearMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B14E287E40F600F835DC /* NearMeUITests.swift */; };
 		3D74B151287E40F600F835DC /* NearMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */; };
 		3D74B15F287E424700F835DC /* ForEachTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B15D287E424700F835DC /* ForEachTutorial.swift */; };
+		F4470A46287F8EAF00159198 /* ViewPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4470A45287F8EAF00159198 /* ViewPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		3D74B14E287E40F600F835DC /* NearMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITests.swift; sourceTree = "<group>"; };
 		3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D74B15D287E424700F835DC /* ForEachTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForEachTutorial.swift; sourceTree = "<group>"; };
+		F4470A45287F8EAF00159198 /* ViewPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		3D74B132287E40F500F835DC /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				F4470A44287F8E9500159198 /* ViewPicker */,
 				3D74B133287E40F500F835DC /* NearMeApp.swift */,
 				3D74B135287E40F500F835DC /* ContentView.swift */,
 				3D74B15D287E424700F835DC /* ForEachTutorial.swift */,
@@ -128,6 +131,14 @@
 				3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */,
 			);
 			path = NearMeUITests;
+			sourceTree = "<group>";
+		};
+		F4470A44287F8E9500159198 /* ViewPicker */ = {
+			isa = PBXGroup;
+			children = (
+				F4470A45287F8EAF00159198 /* ViewPicker.swift */,
+			);
+			path = ViewPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4470A46287F8EAF00159198 /* ViewPicker.swift in Sources */,
 				3D74B136287E40F500F835DC /* ContentView.swift in Sources */,
 				3D74B15F287E424700F835DC /* ForEachTutorial.swift in Sources */,
 				3D74B134287E40F500F835DC /* NearMeApp.swift in Sources */,
