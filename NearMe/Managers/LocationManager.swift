@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-class LocationManager : NSObject, ObservableObject {
+class LocationManager : NSObject {
     
     private let locationManager = CLLocationManager()
     @Published var location: CLLocation? = nil
@@ -25,6 +25,14 @@ class LocationManager : NSObject, ObservableObject {
         
     }
     
+    func startUpdates() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func stopUpdates() {
+        locationManager.stopUpdatingLocation()
+    }
+    
 }
 
 extension LocationManager: CLLocationManagerDelegate {
@@ -34,7 +42,11 @@ extension LocationManager: CLLocationManagerDelegate {
             return
         }
         
-        self.location = location
+        DispatchQueue.main.async {
+            self.location = location
+        }
+        
+        
     }
     
 }
