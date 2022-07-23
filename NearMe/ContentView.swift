@@ -20,7 +20,7 @@ struct ContentView: View {
     @State private var fontSize: Double = 10
     @State private var tapped: Bool = false
     
-    private var locationManager = LocationManager()
+    @State private var locationManager = LocationManager()
     
     @StateObject private var placeListVM = PlaceListViewModel()
     @State private var userTrackingMode : MapUserTrackingMode = .follow
@@ -30,6 +30,10 @@ struct ContentView: View {
     @State private var search: String = ""
     
     @State private var landmarks = [Landmark]()
+    @State private var landmarkIsSelected: Bool = false
+    @State var selectedLandmark = LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10)))
+    
+    @State private var mapType: MKMapType = .standard
     
     private func getNearbyLandmarks() {
         
@@ -55,12 +59,15 @@ struct ContentView: View {
     
     private func getRegion() -> Binding<MKCoordinateRegion> {
         
+        if landmarkIsSelected {
+            return .constant(MKCoordinateRegion(center:CLLocationCoordinate2D(latitude: selectedLandmark.coordinate.latitude - 0.001, longitude: selectedLandmark.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)))
+        }
         
         guard let coordinate = placeListVM.currentLocation else {
             return .constant(MKCoordinateRegion.defaultRegion)
         }
         
-        return .constant(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
+        return .constant(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008)))
         
         return .constant(MKCoordinateRegion.defaultRegion)
         
@@ -98,23 +105,49 @@ struct ContentView: View {
                 Text("List").tag(DisplayType.list)
             }.pickerStyle(SegmentedPickerStyle())
             
-            if displayType == .map {
-                
-                
-                Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: placeListVM.landmarks) { landmark in
-                    MapMarker(coordinate: landmark.coordinate)
+//            Picker("Select", selection: $mapType) {
+//                Text("Standard").tag(MKMapType.standard)
+//                Text("Satellite").tag(MKMapType.satellite)
+//                Text("Hybrid").tag(MKMapType.hybrid)
+//            }.pickerStyle(SegmentedPickerStyle())
+//
+            ZStack {
+                if displayType == .map {
+                    
+                    Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: placeListVM.landmarks) { landmark in
+                        MapAnnotation(coordinate: landmark.coordinate) {
+                            PlaceAnnotationView(landmark: landmark, selectedLandmark: $selectedLandmark, locationManager: $locationManager,
+                                                landmarkIsSelected: $landmarkIsSelected)
+                        }
+                        //                    MapMarker(coordinate: landmark.coordinate)
+                    }
+                    .if(!selectedLandmark.name.isEmpty) {$0.overlay(AnyView(LocationPreviewView(location:selectedLandmark, locationManager: locationManager)
+                        .shadow(color: Color.black.opacity(0.3), radius: 20)
+                        .padding()
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))).offset(y:-20),alignment: .bottom)}
+                    
+                    
+                    //                    .overlay(AnyView(RecenterButton {
+                    //                        placeListVM.startUpdatingLocation()
+                    //                        isDragged = false
+                    //                    }.padding()),alignment: .bottom)
+                    
+//                    ZStack {
+//                        LocationPreviewView(location: LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10))))
+//                            .shadow(color: Color.black.opacity(0.3), radius: 20)
+//                            .padding()
+//                    }
+                    
+                    
+                } else if displayType == .list {
+                    
+                    LandmarkListView(landmarks: placeListVM.landmarks.sorted(by: {$0.distanceToUserInMeters(locationManager: locationManager) < $1.distanceToUserInMeters(locationManager: locationManager)}),
+                                     locationManager: locationManager)
+                    
                 }
-                .overlay(AnyView(RecenterButton {
-                    placeListVM.startUpdatingLocation()
-                    isDragged = false
-                }.padding()),alignment: .bottom)
-                
-                
-            } else if displayType == .list {
-                
-                LandmarkListView(landmarks: placeListVM.landmarks)
-                
             }
+            
+            
         }.padding()
             
             
@@ -182,6 +215,30 @@ struct ContentView: View {
         
         
     }
+}
+
+struct PlaceAnnotationView: View {
+    
+  var landmark: LandmarkViewModel
+  @Binding var selectedLandmark: LandmarkViewModel
+  @Binding var locationManager: LocationManager
+  @Binding var landmarkIsSelected: Bool
+    
+  var body: some View {
+    VStack(spacing: 0) {
+      Image(systemName: "mappin.circle.fill")
+        .font(.title)
+        .foregroundColor(.red)
+      
+      Image(systemName: "arrowtriangle.down.fill")
+        .font(.caption)
+        .foregroundColor(.red)
+        .offset(x: 0, y: -5)
+    }.onTapGesture {
+        selectedLandmark = landmark
+        landmarkIsSelected = true
+    }
+  }
 }
 
 struct CustomModifier: ViewModifier {

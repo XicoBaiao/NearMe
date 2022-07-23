@@ -7,12 +7,14 @@
 
 import SwiftUI
 import GoogleMaps
+import GooglePlaces
 
 @main
 struct NearMeApp: App {
     
     init() {
         GMSServices.provideAPIKey("AIzaSyCkF5B25BUCVbqvQhViWVvAR-MHa6IOobg")
+        GMSPlacesClient.provideAPIKey("AIzaSyCkF5B25BUCVbqvQhViWVvAR-MHa6IOobg")
     }
     
     var body: some Scene {
