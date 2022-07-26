@@ -49,4 +49,8 @@ struct LandmarkViewModel: Identifiable {
         return distance
     }
     
+    func getCity() -> String {
+        return placemark.locality ?? ""
+    }
+    
 }

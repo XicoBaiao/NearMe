@@ -11,6 +11,9 @@ struct LandmarkListView: View {
     
     let landmarks: [LandmarkViewModel]
     var locationManager: LocationManager
+    @Binding var displayType: DisplayType
+    @Binding var selectedLandmark: LandmarkViewModel
+    @Binding var landmarkIsSelected: Bool
     
     var body: some View {
         List(landmarks, id: \.id) { landmark in
@@ -27,6 +30,11 @@ struct LandmarkListView: View {
                         .lineLimit(1)
                         .minimumScaleFactor(0.01)
                 }.frame(width: 50)
+            }.onTapGesture {
+                displayType = .map
+                selectedLandmark = landmark
+                landmarkIsSelected = true
+                GooglePlacesManager.shared.findPlacePhoto(place: selectedLandmark)
             }
         }.listStyle(.plain)
     }

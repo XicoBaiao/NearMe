@@ -31,8 +31,7 @@ struct ContentView: View {
     
     @State private var landmarks = [Landmark]()
     @State private var landmarkIsSelected: Bool = false
-    @State var selectedLandmark = LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10)))
-    
+    @State var selectedLandmark = LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10))) 
     @State private var mapType: MKMapType = .standard
     
     private func getNearbyLandmarks() {
@@ -121,7 +120,7 @@ struct ContentView: View {
                         }
                         //                    MapMarker(coordinate: landmark.coordinate)
                     }
-                    .if(!selectedLandmark.name.isEmpty) {$0.overlay(AnyView(LocationPreviewView(location:selectedLandmark, locationManager: locationManager)
+                    .if(!selectedLandmark.name.isEmpty) {$0.overlay(AnyView(LocationPreviewView(location:selectedLandmark, locationManager: locationManager, googlePlaceManager: GooglePlacesManager.shared)
                         .shadow(color: Color.black.opacity(0.3), radius: 20)
                         .padding()
                         .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))).offset(y:-20),alignment: .bottom)}
@@ -142,14 +141,15 @@ struct ContentView: View {
                 } else if displayType == .list {
                     
                     LandmarkListView(landmarks: placeListVM.landmarks.sorted(by: {$0.distanceToUserInMeters(locationManager: locationManager) < $1.distanceToUserInMeters(locationManager: locationManager)}),
-                                     locationManager: locationManager)
+                                     locationManager: locationManager, displayType: $displayType,
+                    selectedLandmark: $selectedLandmark,
+                    landmarkIsSelected: $landmarkIsSelected)
                     
                 }
             }
             
             
         }.padding()
-            
             
         
 //        VStack {
@@ -237,6 +237,7 @@ struct PlaceAnnotationView: View {
     }.onTapGesture {
         selectedLandmark = landmark
         landmarkIsSelected = true
+        GooglePlacesManager.shared.findPlacePhoto(place: selectedLandmark)
     }
   }
 }

@@ -13,12 +13,14 @@ struct LocationPreviewView: View {
     var location: LandmarkViewModel
     var locationManager: LocationManager
     
+    @ObservedObject var googlePlaceManager: GooglePlacesManager
+    
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
             VStack(alignment: .leading, spacing: 16) {
                 imageSection
                 titleSection
-            }
+            }.padding(.trailing, 15)
             
             VStack(spacing: 8.0) {
                 directionsButton
@@ -32,6 +34,7 @@ struct LocationPreviewView: View {
                 .offset(y: 65)
         )
         .cornerRadius(10)
+        .frame(maxHeight: 250)
     }
 }
 
@@ -46,11 +49,13 @@ extension LocationPreviewView {
     
     private var imageSection: some View {
         ZStack {
-            Image("Spar")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 100, height: 100)
-                .cornerRadius(10)
+            if let placeImage = googlePlaceManager.placeImage {
+                placeImage
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(10)
+            }
         }
         .padding(6)
         .background(Color.white)

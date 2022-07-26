@@ -32,6 +32,9 @@
 		3D74B14F287E40F600F835DC /* NearMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B14E287E40F600F835DC /* NearMeUITests.swift */; };
 		3D74B151287E40F600F835DC /* NearMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */; };
 		3D74B15F287E424700F835DC /* ForEachTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B15D287E424700F835DC /* ForEachTutorial.swift */; };
+		3D87A751288F4FF6003824BA /* GooglePlaceItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87A750288F4FF6003824BA /* GooglePlaceItemViewModel.swift */; };
+		3D87A753288F5449003824BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87A752288F5449003824BA /* AppDelegate.swift */; };
+		3D87A755288F54AB003824BA /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87A754288F54AB003824BA /* GooglePlacesManager.swift */; };
 		60CC9F4A73FFEED2C22A4FA7 /* Pods_NearMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 150BD13CA66882325027E9CD /* Pods_NearMeTests.framework */; };
 		C6FB1900618F1109201B1874 /* Pods_NearMe_NearMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3EC301C1143D67D6CB7E4D7 /* Pods_NearMe_NearMeUITests.framework */; };
 		CC8202951471DEB4E2B76F0C /* Pods_NearMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3A6187B3FC8D7AB9F16367 /* Pods_NearMe.framework */; };
@@ -86,6 +89,9 @@
 		3D74B14E287E40F600F835DC /* NearMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITests.swift; sourceTree = "<group>"; };
 		3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D74B15D287E424700F835DC /* ForEachTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForEachTutorial.swift; sourceTree = "<group>"; };
+		3D87A750288F4FF6003824BA /* GooglePlaceItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlaceItemViewModel.swift; sourceTree = "<group>"; };
+		3D87A752288F5449003824BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D87A754288F54AB003824BA /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
 		78442CB9702A57C483883AAC /* Pods-NearMe-NearMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe-NearMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-NearMe-NearMeUITests/Pods-NearMe-NearMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		813591DFB876609CE708D6CA /* Pods-NearMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMeTests.release.xcconfig"; path = "Target Support Files/Pods-NearMeTests/Pods-NearMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB3A6187B3FC8D7AB9F16367 /* Pods_NearMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				3D390D65287FA8810075150A /* LocationManager.swift */,
+				3D87A754288F54AB003824BA /* GooglePlacesManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -153,6 +160,7 @@
 			children = (
 				3D67FD0A28877318001A856D /* PlaceListViewModel.swift */,
 				3D67FD0F2887783C001A856D /* LandmarkViewModel.swift */,
+				3D87A750288F4FF6003824BA /* GooglePlaceItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 				3D6FE6DB2888C67000EFF277 /* View+Extensions.swift */,
 				3D67FD0D28877346001A856D /* MKCoordinateRegion+Extensions.swift */,
 				3D49919D288B57E500E9A0E6 /* Location+Extensions.swift */,
+				3D87A752288F5449003824BA /* AppDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -509,16 +518,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D87A753288F5449003824BA /* AppDelegate.swift in Sources */,
 				3D74B136287E40F500F835DC /* ContentView.swift in Sources */,
 				3D390D60287FA6430075150A /* NearMeMapView.swift in Sources */,
 				3D67FD0E28877346001A856D /* MKCoordinateRegion+Extensions.swift in Sources */,
 				3D390D6B287FB5B50075150A /* LandmarkAnnotation.swift in Sources */,
+				3D87A751288F4FF6003824BA /* GooglePlaceItemViewModel.swift in Sources */,
 				3D6FE6DA2888BA2800EFF277 /* LocationPreviewView.swift in Sources */,
 				3D390D5E287F93D90075150A /* GoogleMapsView.swift in Sources */,
 				3D390D5B287F7F840075150A /* MapView.swift in Sources */,
 				3D67FD172887864F001A856D /* RecenterButton.swift in Sources */,
 				3D49919E288B57E500E9A0E6 /* Location+Extensions.swift in Sources */,
 				3D67FD102887783C001A856D /* LandmarkViewModel.swift in Sources */,
+				3D87A755288F54AB003824BA /* GooglePlacesManager.swift in Sources */,
 				3D67FD1328877C43001A856D /* LandmarkListView.swift in Sources */,
 				3D67FD1528877DB4001A856D /* LandmarkCategoryView.swift in Sources */,
 				3D6FE6DC2888C67000EFF277 /* View+Extensions.swift in Sources */,
