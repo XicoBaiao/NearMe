@@ -1,0 +1,22 @@
+[
+    {
+        "id" : 1,
+        "name" : "cover_gas_station"
+    },
+    {
+        "id" : 2,
+        "name" : "cover_restaurant"
+    },
+    {
+        "id" : 3,
+        "name" : "cover_hotel"
+    },
+    {
+        "id" : 4,
+        "name" : "cover_bar"
+    },
+    {
+        "id" : 5,
+        "name" : "cover_airport"
+    },
+]
