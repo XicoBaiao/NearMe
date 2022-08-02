@@ -31,8 +31,8 @@ struct MapView_Previews: PreviewProvider {
 final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?
     
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.12534738530079,
-                                                                                  longitude: -8.541505164842189),
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 5,
+                                                                                  longitude: -5),
                                                    span: MKCoordinateSpan(latitudeDelta: 0.01,
                                                                           longitudeDelta: 0.01))
     
