@@ -7,4 +7,14 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <Group
+      location = "container:"
+      name = "Common">
+      <FileRef
+         location = "group:Common/NearMeDomain/NearMeDomain.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Common/NearMeNetwork/NearMeNetwork.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>

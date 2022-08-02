@@ -9,14 +9,16 @@ import SwiftUI
 
 struct LandmarkListView: View {
     
-    let landmarks: [LandmarkViewModel]
+    let locations: [LocationListItemViewModel]
     
     var body: some View {
-        List(landmarks, id: \.id) { landmark in
+        List(locations, id: \.id) { location in
             VStack(alignment: .leading, spacing: 10) {
-                Text(landmark.name)
+                Text(location.name)
                     .font(.headline)
-                Text(landmark.title)
+                if let title = location.title {
+                    Text(title)
+                }
             }
         }.listStyle(.plain)
     }

@@ -17,7 +17,7 @@
 		3D67FD0728876640001A856D /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67FD0628876640001A856D /* PlaceListView.swift */; };
 		3D67FD0B28877318001A856D /* PlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67FD0A28877318001A856D /* PlaceListViewModel.swift */; };
 		3D67FD0E28877346001A856D /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67FD0D28877346001A856D /* MKCoordinateRegion+Extensions.swift */; };
-		3D67FD102887783C001A856D /* LandmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67FD0F2887783C001A856D /* LandmarkViewModel.swift */; };
+		3D67FD102887783C001A856D /* LocationListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67FD0F2887783C001A856D /* LocationListItemViewModel.swift */; };
 		3D67FD1328877C43001A856D /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67FD1228877C43001A856D /* LandmarkListView.swift */; };
 		3D67FD1528877DB4001A856D /* LandmarkCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67FD1428877DB4001A856D /* LandmarkCategoryView.swift */; };
 		3D67FD172887864F001A856D /* RecenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67FD162887864F001A856D /* RecenterButton.swift */; };
@@ -30,6 +30,10 @@
 		3D74B151287E40F600F835DC /* NearMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */; };
 		3D74B15F287E424700F835DC /* ForEachTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74B15D287E424700F835DC /* ForEachTutorial.swift */; };
 		60CC9F4A73FFEED2C22A4FA7 /* Pods_NearMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 150BD13CA66882325027E9CD /* Pods_NearMeTests.framework */; };
+		78969841288F413B00A29ED3 /* NearMeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78969840288F413B00A29ED3 /* NearMeDomain.framework */; };
+		78969842288F413B00A29ED3 /* NearMeDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78969840288F413B00A29ED3 /* NearMeDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		78969845288F414300A29ED3 /* NearMeNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78969844288F414300A29ED3 /* NearMeNetwork.framework */; };
+		78969846288F414300A29ED3 /* NearMeNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78969844288F414300A29ED3 /* NearMeNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C6FB1900618F1109201B1874 /* Pods_NearMe_NearMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3EC301C1143D67D6CB7E4D7 /* Pods_NearMe_NearMeUITests.framework */; };
 		CC8202951471DEB4E2B76F0C /* Pods_NearMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3A6187B3FC8D7AB9F16367 /* Pods_NearMe.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +55,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		78969843288F413C00A29ED3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				78969842288F413B00A29ED3 /* NearMeDomain.framework in Embed Frameworks */,
+				78969846288F414300A29ED3 /* NearMeNetwork.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		150BD13CA66882325027E9CD /* Pods_NearMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2510943C59D1650C3931DBFC /* Pods-NearMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.release.xcconfig"; path = "Target Support Files/Pods-NearMe/Pods-NearMe.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,7 +84,7 @@
 		3D67FD0628876640001A856D /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		3D67FD0A28877318001A856D /* PlaceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewModel.swift; sourceTree = "<group>"; };
 		3D67FD0D28877346001A856D /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
-		3D67FD0F2887783C001A856D /* LandmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkViewModel.swift; sourceTree = "<group>"; };
+		3D67FD0F2887783C001A856D /* LocationListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListItemViewModel.swift; sourceTree = "<group>"; };
 		3D67FD1228877C43001A856D /* LandmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
 		3D67FD1428877DB4001A856D /* LandmarkCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkCategoryView.swift; sourceTree = "<group>"; };
 		3D67FD162887864F001A856D /* RecenterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecenterButton.swift; sourceTree = "<group>"; };
@@ -81,6 +100,8 @@
 		3D74B150287E40F600F835DC /* NearMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D74B15D287E424700F835DC /* ForEachTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForEachTutorial.swift; sourceTree = "<group>"; };
 		78442CB9702A57C483883AAC /* Pods-NearMe-NearMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe-NearMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-NearMe-NearMeUITests/Pods-NearMe-NearMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		78969840288F413B00A29ED3 /* NearMeDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NearMeDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78969844288F414300A29ED3 /* NearMeNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NearMeNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		813591DFB876609CE708D6CA /* Pods-NearMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMeTests.release.xcconfig"; path = "Target Support Files/Pods-NearMeTests/Pods-NearMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB3A6187B3FC8D7AB9F16367 /* Pods_NearMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C44A5F25FE83F4EDA36EC8 /* Pods-NearMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.debug.xcconfig"; path = "Target Support Files/Pods-NearMe/Pods-NearMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,7 +115,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78969841288F413B00A29ED3 /* NearMeDomain.framework in Frameworks */,
 				CC8202951471DEB4E2B76F0C /* Pods_NearMe.framework in Frameworks */,
+				78969845288F414300A29ED3 /* NearMeNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				3D67FD0A28877318001A856D /* PlaceListViewModel.swift */,
-				3D67FD0F2887783C001A856D /* LandmarkViewModel.swift */,
+				3D67FD0F2887783C001A856D /* LocationListItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -242,6 +265,8 @@
 		41CA13551A97D15781D1642B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78969844288F414300A29ED3 /* NearMeNetwork.framework */,
+				78969840288F413B00A29ED3 /* NearMeDomain.framework */,
 				AB3A6187B3FC8D7AB9F16367 /* Pods_NearMe.framework */,
 				F3EC301C1143D67D6CB7E4D7 /* Pods_NearMe_NearMeUITests.framework */,
 				150BD13CA66882325027E9CD /* Pods_NearMeTests.framework */,
@@ -274,6 +299,7 @@
 				3D74B12D287E40F500F835DC /* Frameworks */,
 				3D74B12E287E40F500F835DC /* Resources */,
 				91BD4402E2E4FC0D2471D389 /* [CP] Copy Pods Resources */,
+				78969843288F413C00A29ED3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -507,7 +533,7 @@
 				3D390D5E287F93D90075150A /* GoogleMapsView.swift in Sources */,
 				3D390D5B287F7F840075150A /* MapView.swift in Sources */,
 				3D67FD172887864F001A856D /* RecenterButton.swift in Sources */,
-				3D67FD102887783C001A856D /* LandmarkViewModel.swift in Sources */,
+				3D67FD102887783C001A856D /* LocationListItemViewModel.swift in Sources */,
 				3D67FD1328877C43001A856D /* LandmarkListView.swift in Sources */,
 				3D67FD1528877DB4001A856D /* LandmarkCategoryView.swift in Sources */,
 				3D67FD0728876640001A856D /* PlaceListView.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import NearMeNetwork
 
 enum DisplayType {
     case map
@@ -14,49 +15,33 @@ enum DisplayType {
 }
 
 struct ContentView: View {
-    private var isHidden: Bool = false
+    var isHidden: Bool = false
     
-    @State private var swiftyColor: Color = .red
-    @State private var fontSize: Double = 10
-    @State private var tapped: Bool = false
+    @State  var swiftyColor: Color = .red
+    @State  var fontSize: Double = 10
+    @State  var tapped: Bool = false
     
-    private var locationManager = LocationManager()
+    var locationManager = LocationManager()
     
-    @StateObject private var placeListVM = PlaceListViewModel()
-    @State private var userTrackingMode : MapUserTrackingMode = .follow
-    @State private var displayType: DisplayType = .map
-    @State private var isDragged: Bool = false
+    @ObservedObject var viewModel: PlaceListViewModel
+    @State var userTrackingMode : MapUserTrackingMode = .follow
+    @State var displayType: DisplayType = .map
+    @State var isDragged: Bool = false
     
-    @State private var search: String = ""
-    
-    @State private var landmarks = [Landmark]()
-    
+    @State var search: String = ""
+        
     private func getNearbyLandmarks() {
         
         guard let location = self.locationManager.location else {return}
         
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = self.search
-        request.region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000
-        )
-        
-        let search = MKLocalSearch(request: request)
-        search.start { (response, error) in
-            
-            guard let response = response, error == nil else {return}
-            
-            let mapItems = response.mapItems
-            self.landmarks = mapItems.map {
-                Landmark(placemark: $0.placemark)
-            }
-        }
+        let search = viewModel.fetchLandmarks(query: search)
         
     }
     
     private func getRegion() -> Binding<MKCoordinateRegion> {
         
         
-        guard let coordinate = placeListVM.currentLocation else {
+        guard let coordinate = viewModel.currentLocation else {
             return .constant(MKCoordinateRegion.defaultRegion)
         }
         
@@ -68,7 +53,7 @@ struct ContentView: View {
     
     func calculateOffset() -> CGFloat {
         
-        if self.landmarks.count > 0 && !self.tapped {
+        if self.viewModel.locations.count > 0 && !self.tapped {
             return UIScreen.main.bounds.size.height - UIScreen.main.bounds.size.height/4
         } else if self.tapped {
             return 100
@@ -86,11 +71,11 @@ struct ContentView: View {
             TextField("Search", text: $search, onEditingChanged: { _ in
                 
             }, onCommit: {
-                placeListVM.searchLandmarks(searchTerm: search)
+                viewModel.fetchLandmarks(query: search)
             }).textFieldStyle(.roundedBorder)
             
             LandmarkCategoryView { (category) in
-                placeListVM.searchLandmarks(searchTerm: category)
+                viewModel.fetchLandmarks(query: category)
             }
             
             Picker("Select", selection: $displayType) {
@@ -101,18 +86,19 @@ struct ContentView: View {
             if displayType == .map {
                 
                 
-                Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: placeListVM.landmarks) { landmark in
-                    MapMarker(coordinate: landmark.coordinate)
+                Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: viewModel.locations) { location in
+                    MapMarker(coordinate: location.coordinate)
+                    
                 }
                 .overlay(AnyView(RecenterButton {
-                    placeListVM.startUpdatingLocation()
+                    viewModel.startUpdatingLocation()
                     isDragged = false
                 }.padding()),alignment: .bottom)
                 
                 
             } else if displayType == .list {
                 
-                LandmarkListView(landmarks: placeListVM.landmarks)
+                LandmarkListView(locations: viewModel.locations)
                 
             }
         }.padding()
@@ -206,7 +192,7 @@ struct CustomModifier: ViewModifier {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: PlaceListViewModel())
     }
 }
 

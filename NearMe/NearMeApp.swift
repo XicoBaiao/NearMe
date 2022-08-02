@@ -17,7 +17,7 @@ struct NearMeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: PlaceListViewModel())
         }
     }
 }
