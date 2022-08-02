@@ -1,5 +1,5 @@
 //
-//  LandmarkListView.swift
+//  LocationListView.swift
 //  NearMe
 //
 //  Created by Baiao, Francisco Fonseca on 20/07/2022.
@@ -7,34 +7,34 @@
 
 import SwiftUI
 
-struct LandmarkListView: View {
+struct LocationListView: View {
     
-    let landmarks: [LandmarkViewModel]
+    let locations: [LocationListItemViewModel]
     var locationManager: LocationManager
     @Binding var displayType: DisplayType
-    @Binding var selectedLandmark: LandmarkViewModel
-    @Binding var landmarkIsSelected: Bool
+    @Binding var selectedLocation: LocationListItemViewModel
+    @Binding var locationIsSelected: Bool
     
     var body: some View {
-        List(landmarks, id: \.id) { landmark in
+        List(locations, id: \.id) { location in
             HStack(spacing: 10) {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(landmark.name)
+                    Text(location.name)
                         .font(.headline)
-                    Text(landmark.title)
+                    Text(location.title ?? "")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text(landmark.distanceToUserInKm(locationManager: locationManager))
+                    Text(location.distanceToUserInKm(locationManager: locationManager))
                         .font(.body)
                         .lineLimit(1)
                         .minimumScaleFactor(0.01)
                 }.frame(width: 50)
             }.onTapGesture {
                 displayType = .map
-                selectedLandmark = landmark
-                landmarkIsSelected = true
-                GooglePlacesManager.shared.findPlacePhoto(place: selectedLandmark)
+                selectedLocation = location
+                locationIsSelected = true
+                GooglePlacesManager.shared.findPlacePhoto(place: selectedLocation)
             }
         }.listStyle(.plain)
     }

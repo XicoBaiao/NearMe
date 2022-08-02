@@ -57,8 +57,8 @@ class PlaceListViewModel: ObservableObject {
 //
 //    }
     
-    func fetchLandmarks(query: String?) {
-        hereRepository.search(query: query, categories: [])
+    func fetchLocations(query: String?) {
+        hereRepository.search(query: query, userLocation: currentLocation, categories: [])
             .receive(on: DispatchQueue.main)
             .sink {
                 switch $0 {

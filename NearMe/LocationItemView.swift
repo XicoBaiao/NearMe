@@ -1,5 +1,5 @@
 //
-//  PlaceListView.swift
+//  LocationItemView.swift
 //  NearMe
 //
 //  Created by Baiao, Francisco Fonseca on 19/07/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct PlaceListView: View {
+struct LocationItemView: View {
     
     let landmarks: [Landmark]
     var onTap: () -> ()
@@ -33,6 +33,6 @@ struct PlaceListView: View {
 
 struct PlaceListView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceListView(landmarks: [Landmark(placemark: MKPlacemark())], onTap: {})
+        LocationItemView(landmarks: [Landmark(placemark: MKPlacemark())], onTap: {})
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 import GoogleMaps
 import GooglePlaces
+import NearMeNetwork
 
 @main
 struct NearMeApp: App {
@@ -20,7 +21,7 @@ struct NearMeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            ContentView(viewModel: PlaceListViewModel(hereRepository: HereRemoteRepository()))
         }
     }
 }

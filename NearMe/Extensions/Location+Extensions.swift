@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import NearMeDomain
 
 extension CLLocation {
     
@@ -31,4 +32,10 @@ extension CLLocationCoordinate2D { // In meteres
         
     }
     
+}
+
+extension LocationCoordinate {
+    func asCLLocationCoordinate2D() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: self.lat, longitude: self.lng)
+    }
 }

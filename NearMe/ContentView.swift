@@ -30,23 +30,22 @@ struct ContentView: View {
     
     @State private var search: String = ""
     
-    @State private var landmarks = [Landmark]()
-    @State private var landmarkIsSelected: Bool = false
-    @State var selectedLandmark = LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10))) 
+    @State private var locationIsSelected: Bool = false
+    @State var selectedLocation = LocationListItemViewModel.defaultLocation
     @State private var mapType: MKMapType = .standard
     
-    private func getNearbyLandmarks() {
+    private func getNearbyLocations() {
         
         guard let location = self.locationManager.location else {return}
         
-        let search = viewModel.fetchLandmarks(query: search)
+        let search = viewModel.fetchLocations(query: search)
         
     }
     
     private func getRegion() -> Binding<MKCoordinateRegion> {
         
-        if landmarkIsSelected {
-            return .constant(MKCoordinateRegion(center:CLLocationCoordinate2D(latitude: selectedLandmark.coordinate.latitude - 0.001, longitude: selectedLandmark.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)))
+        if locationIsSelected {
+            return .constant(MKCoordinateRegion(center:CLLocationCoordinate2D(latitude: selectedLocation.location.position.lat - 0.001, longitude: selectedLocation.location.position.lng), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)))
         }
         
         guard let coordinate = viewModel.currentLocation else {
@@ -79,11 +78,11 @@ struct ContentView: View {
             TextField("Search", text: $search, onEditingChanged: { _ in
                 
             }, onCommit: {
-                viewModel.fetchLandmarks(query: search)
+                viewModel.fetchLocations(query: search)
             }).textFieldStyle(.roundedBorder)
             
             LandmarkCategoryView { (category) in
-                viewModel.fetchLandmarks(query: category)
+                viewModel.fetchLocations(query: category)
             }
             
             Picker("Select", selection: $displayType) {
@@ -100,116 +99,43 @@ struct ContentView: View {
             ZStack {
                 if displayType == .map {
                     
-                    Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: placeListVM.landmarks) { landmark in
-                        MapAnnotation(coordinate: landmark.coordinate) {
-                            PlaceAnnotationView(landmark: landmark, selectedLandmark: $selectedLandmark, locationManager: $locationManager,
-                                                landmarkIsSelected: $landmarkIsSelected)
+                    Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: viewModel.locations) { model in
+                        MapAnnotation(coordinate: model.location.position.asCLLocationCoordinate2D()) {
+                            PlaceAnnotationView(location: model, selectedLocation: $selectedLocation, locationManager: $locationManager,
+                                                locationIsSelected: $locationIsSelected)
                         }
-                        //                    MapMarker(coordinate: landmark.coordinate)
+                        //                    MapMarker(coordinate: location.coordinate)
                     }
-                    .if(!selectedLandmark.name.isEmpty) {$0.overlay(AnyView(LocationPreviewView(location:selectedLandmark, locationManager: locationManager, googlePlaceManager: GooglePlacesManager.shared)
+                    .if(!selectedLocation.name.isEmpty) {
+                        $0.overlay(AnyView(LocationPreviewView(location:selectedLocation, locationManager: locationManager, googlePlaceManager: GooglePlacesManager.shared)
                         .shadow(color: Color.black.opacity(0.3), radius: 20)
                         .padding()
-                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))).offset(y:-20),alignment: .bottom)}
-                    
-                    
-                    //                    .overlay(AnyView(RecenterButton {
-                    //                        placeListVM.startUpdatingLocation()
-                    //                        isDragged = false
-                    //                    }.padding()),alignment: .bottom)
-                    
-//                    ZStack {
-//                        LocationPreviewView(location: LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10))))
-//                            .shadow(color: Color.black.opacity(0.3), radius: 20)
-//                            .padding()
-//                    }
-                    
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))).offset(y:-20),alignment: .bottom)
+                        
+                    }
+
                     
                 } else if displayType == .list {
                     
-                    LandmarkListView(landmarks: placeListVM.landmarks.sorted(by: {$0.distanceToUserInMeters(locationManager: locationManager) < $1.distanceToUserInMeters(locationManager: locationManager)}),
+                    LocationListView(locations: viewModel.locations.sorted(by: {$0.distanceToUserInMeters(locationManager: locationManager) < $1.distanceToUserInMeters(locationManager: locationManager)}),
                                      locationManager: locationManager, displayType: $displayType,
-                    selectedLandmark: $selectedLandmark,
-                    landmarkIsSelected: $landmarkIsSelected)
+                    selectedLocation: $selectedLocation,
+                    locationIsSelected: $locationIsSelected)
                     
                 }
             }
             
             
         }.padding()
-            
-        
-//        VStack {
-//            Image(systemName: "swift")
-//                .resizable()
-//                .frame(width: 100.0, height: 100.0)
-//                .background(Color.blue)
-//                .padding([.leading, .bottom, .trailing], 15.0)
-//            Text("Howdy, world!")
-//                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                .kerning(5.0)
-//                .padding()
-//
-//        }
-        
-        
-        
-        //MAP WITH PLACES AND MAPKIT
-        
-//        ZStack(alignment: .top) {
-//
-//
-//            NearMeMapView(landmarks: self.landmarks)
-//                .ignoresSafeArea()
-//
-//            TextField("Search", text: self.$search, onEditingChanged: { _ in }) {
-//
-//                self.getNearbyLandmarks()
-//
-//            }.textFieldStyle(RoundedBorderTextFieldStyle())
-//                .padding()
-//                .offset(y: 44)
-//
-//            PlaceListView(landmarks: self.landmarks) {
-//
-//                self.tapped.toggle()
-//
-//
-//            }
-//            .offset(y: calculateOffset())
-//            .animation(.spring())
-//        }
-        
-        
-        
-        
-        
-        
-        
-//        VStack(spacing: 70.0) {
-//            SwiftyControls(swiftyColor: $swiftyColor, fontSize: $fontSize)
-//
-//            HStack(alignment: .center, spacing: 5.0) {
-//                Button("Continue", action: {})
-//                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
-//                Button("More details", action: {})
-//                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
-//                Button("Cancel", action: {})
-//                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
-//            }
-//        }
-//        .padding(.horizontal, 20.0)
-        
-        
     }
 }
 
 struct PlaceAnnotationView: View {
     
-  var landmark: LandmarkViewModel
-  @Binding var selectedLandmark: LandmarkViewModel
+  var location: LocationListItemViewModel
+  @Binding var selectedLocation: LocationListItemViewModel
   @Binding var locationManager: LocationManager
-  @Binding var landmarkIsSelected: Bool
+  @Binding var locationIsSelected: Bool
     
   var body: some View {
     VStack(spacing: 0) {
@@ -222,9 +148,9 @@ struct PlaceAnnotationView: View {
         .foregroundColor(.red)
         .offset(x: 0, y: -5)
     }.onTapGesture {
-        selectedLandmark = landmark
-        landmarkIsSelected = true
-        GooglePlacesManager.shared.findPlacePhoto(place: selectedLandmark)
+        selectedLocation = location
+        locationIsSelected = true
+        GooglePlacesManager.shared.findPlacePhoto(place: selectedLocation)
     }
   }
 }

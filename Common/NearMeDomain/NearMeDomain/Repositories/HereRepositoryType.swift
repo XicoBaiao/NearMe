@@ -7,9 +7,10 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
 public protocol HereRepositoryType {
     
-    func search(query: String?, categories: [String]) -> AnyPublisher<[Location], Error>
+    func search(query: String?, userLocation: CLLocationCoordinate2D?, categories: [String]) -> AnyPublisher<[Location], Error>
     
 }

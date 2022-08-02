@@ -10,7 +10,7 @@ import MapKit
 
 struct LocationPreviewView: View {
     
-    var location: LandmarkViewModel
+    var location: LocationListItemViewModel
     var locationManager: LocationManager
     
     @ObservedObject var googlePlaceManager: GooglePlacesManager
@@ -71,7 +71,7 @@ extension LocationPreviewView {
                 .fontWeight(.bold)
                 .minimumScaleFactor(0.01)
             
-            Text(self.location.title)
+            Text(self.location.title ?? "")
                 .font(.subheadline)
                 .minimumScaleFactor(0.01)
             

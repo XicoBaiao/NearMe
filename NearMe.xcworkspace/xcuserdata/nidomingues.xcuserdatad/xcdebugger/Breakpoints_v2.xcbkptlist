@@ -7,7 +7,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EC32ABC7-57C0-46D6-95CE-534D04979A0C"
+            uuid = "3B0FA9A9-7A38-458E-BA3F-2BAB3BFEDDBD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "fetchLandmarks(query:)"
+            landmarkName = "fetchLocations(query:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

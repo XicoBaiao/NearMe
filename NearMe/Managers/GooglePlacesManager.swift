@@ -28,13 +28,13 @@ final class GooglePlacesManager: ObservableObject {
     
     private init() {}
     
-    public func findPlacePhoto(place : LandmarkViewModel) {
+    public func findPlacePhoto(place : LocationListItemViewModel) {
         let token = GMSAutocompleteSessionToken.init()
         
         let filter = GMSAutocompleteFilter()
         filter.origin = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         
-        let placeCity = place.getCity()
+        let placeCity = place.location.address?.city ?? ""
         
         client.findAutocompletePredictions(fromQuery: place.name + " " + placeCity, filter: filter, sessionToken: token, callback: { (results, error) in
             if let error = error {
