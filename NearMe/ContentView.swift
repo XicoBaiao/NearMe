@@ -15,6 +15,7 @@ enum DisplayType {
 
 struct ContentView: View {
     private var isHidden: Bool = false
+    var initialCategory : String = ""
     
     @State private var swiftyColor: Color = .red
     @State private var fontSize: Double = 10
@@ -31,8 +32,13 @@ struct ContentView: View {
     
     @State private var landmarks = [Landmark]()
     @State private var landmarkIsSelected: Bool = false
-    @State var selectedLandmark = LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10))) 
+    @State var selectedLandmark = LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10)))
     @State private var mapType: MKMapType = .standard
+    
+    init(initialCategory: String = "") {
+        self.initialCategory = initialCategory
+        UIScrollView.appearance().backgroundColor = UIColor.white
+    }
     
     private func getNearbyLandmarks() {
         
@@ -104,12 +110,12 @@ struct ContentView: View {
                 Text("List").tag(DisplayType.list)
             }.pickerStyle(SegmentedPickerStyle())
             
-//            Picker("Select", selection: $mapType) {
-//                Text("Standard").tag(MKMapType.standard)
-//                Text("Satellite").tag(MKMapType.satellite)
-//                Text("Hybrid").tag(MKMapType.hybrid)
-//            }.pickerStyle(SegmentedPickerStyle())
-//
+            //            Picker("Select", selection: $mapType) {
+            //                Text("Standard").tag(MKMapType.standard)
+            //                Text("Satellite").tag(MKMapType.satellite)
+            //                Text("Hybrid").tag(MKMapType.hybrid)
+            //            }.pickerStyle(SegmentedPickerStyle())
+            //
             ZStack {
                 if displayType == .map {
                     
@@ -131,67 +137,71 @@ struct ContentView: View {
                     //                        isDragged = false
                     //                    }.padding()),alignment: .bottom)
                     
-//                    ZStack {
-//                        LocationPreviewView(location: LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10))))
-//                            .shadow(color: Color.black.opacity(0.3), radius: 20)
-//                            .padding()
-//                    }
+                    //                    ZStack {
+                    //                        LocationPreviewView(location: LandmarkViewModel(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 10, longitude: 10))))
+                    //                            .shadow(color: Color.black.opacity(0.3), radius: 20)
+                    //                            .padding()
+                    //                    }
                     
                     
                 } else if displayType == .list {
                     
                     LandmarkListView(landmarks: placeListVM.landmarks.sorted(by: {$0.distanceToUserInMeters(locationManager: locationManager) < $1.distanceToUserInMeters(locationManager: locationManager)}),
                                      locationManager: locationManager, displayType: $displayType,
-                    selectedLandmark: $selectedLandmark,
-                    landmarkIsSelected: $landmarkIsSelected)
+                                     selectedLandmark: $selectedLandmark,
+                                     landmarkIsSelected: $landmarkIsSelected)
                     
                 }
             }
             
             
         }.padding()
-            
+            .navigationBarTitle("Near Me", displayMode: .inline)
+            .onAppear {
+                placeListVM.searchLandmarks(searchTerm: initialCategory)
+                
+            }
         
-//        VStack {
-//            Image(systemName: "swift")
-//                .resizable()
-//                .frame(width: 100.0, height: 100.0)
-//                .background(Color.blue)
-//                .padding([.leading, .bottom, .trailing], 15.0)
-//            Text("Howdy, world!")
-//                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                .kerning(5.0)
-//                .padding()
-//
-//        }
+        //        VStack {
+        //            Image(systemName: "swift")
+        //                .resizable()
+        //                .frame(width: 100.0, height: 100.0)
+        //                .background(Color.blue)
+        //                .padding([.leading, .bottom, .trailing], 15.0)
+        //            Text("Howdy, world!")
+        //                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+        //                .kerning(5.0)
+        //                .padding()
+        //
+        //        }
         
         
         
         //MAP WITH PLACES AND MAPKIT
         
-//        ZStack(alignment: .top) {
-//
-//
-//            NearMeMapView(landmarks: self.landmarks)
-//                .ignoresSafeArea()
-//
-//            TextField("Search", text: self.$search, onEditingChanged: { _ in }) {
-//
-//                self.getNearbyLandmarks()
-//
-//            }.textFieldStyle(RoundedBorderTextFieldStyle())
-//                .padding()
-//                .offset(y: 44)
-//
-//            PlaceListView(landmarks: self.landmarks) {
-//
-//                self.tapped.toggle()
-//
-//
-//            }
-//            .offset(y: calculateOffset())
-//            .animation(.spring())
-//        }
+        //        ZStack(alignment: .top) {
+        //
+        //
+        //            NearMeMapView(landmarks: self.landmarks)
+        //                .ignoresSafeArea()
+        //
+        //            TextField("Search", text: self.$search, onEditingChanged: { _ in }) {
+        //
+        //                self.getNearbyLandmarks()
+        //
+        //            }.textFieldStyle(RoundedBorderTextFieldStyle())
+        //                .padding()
+        //                .offset(y: 44)
+        //
+        //            PlaceListView(landmarks: self.landmarks) {
+        //
+        //                self.tapped.toggle()
+        //
+        //
+        //            }
+        //            .offset(y: calculateOffset())
+        //            .animation(.spring())
+        //        }
         
         
         
@@ -199,19 +209,19 @@ struct ContentView: View {
         
         
         
-//        VStack(spacing: 70.0) {
-//            SwiftyControls(swiftyColor: $swiftyColor, fontSize: $fontSize)
-//
-//            HStack(alignment: .center, spacing: 5.0) {
-//                Button("Continue", action: {})
-//                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
-//                Button("More details", action: {})
-//                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
-//                Button("Cancel", action: {})
-//                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
-//            }
-//        }
-//        .padding(.horizontal, 20.0)
+        //        VStack(spacing: 70.0) {
+        //            SwiftyControls(swiftyColor: $swiftyColor, fontSize: $fontSize)
+        //
+        //            HStack(alignment: .center, spacing: 5.0) {
+        //                Button("Continue", action: {})
+        //                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
+        //                Button("More details", action: {})
+        //                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
+        //                Button("Cancel", action: {})
+        //                    .modifier(CustomModifier(swiftyColor: $swiftyColor, fontSize: $fontSize))
+        //            }
+        //        }
+        //        .padding(.horizontal, 20.0)
         
         
     }
@@ -219,27 +229,27 @@ struct ContentView: View {
 
 struct PlaceAnnotationView: View {
     
-  var landmark: LandmarkViewModel
-  @Binding var selectedLandmark: LandmarkViewModel
-  @Binding var locationManager: LocationManager
-  @Binding var landmarkIsSelected: Bool
+    var landmark: LandmarkViewModel
+    @Binding var selectedLandmark: LandmarkViewModel
+    @Binding var locationManager: LocationManager
+    @Binding var landmarkIsSelected: Bool
     
-  var body: some View {
-    VStack(spacing: 0) {
-      Image(systemName: "mappin.circle.fill")
-        .font(.title)
-        .foregroundColor(.red)
-      
-      Image(systemName: "arrowtriangle.down.fill")
-        .font(.caption)
-        .foregroundColor(.red)
-        .offset(x: 0, y: -5)
-    }.onTapGesture {
-        selectedLandmark = landmark
-        landmarkIsSelected = true
-        GooglePlacesManager.shared.findPlacePhoto(place: selectedLandmark)
+    var body: some View {
+        VStack(spacing: 0) {
+            Image(systemName: "mappin.circle.fill")
+                .font(.title)
+                .foregroundColor(.red)
+            
+            Image(systemName: "arrowtriangle.down.fill")
+                .font(.caption)
+                .foregroundColor(.red)
+                .offset(x: 0, y: -5)
+        }.onTapGesture {
+            selectedLandmark = landmark
+            landmarkIsSelected = true
+            GooglePlacesManager.shared.findPlacePhoto(place: selectedLandmark)
+        }
     }
-  }
 }
 
 struct CustomModifier: ViewModifier {

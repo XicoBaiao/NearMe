@@ -15,7 +15,7 @@ struct HomeScreen: View {
         
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
 
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.red]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.blue]
     }
     
     var body: some View {
@@ -29,7 +29,6 @@ struct HomeScreen: View {
                         ForEach(categories) { category in
                             CategoryListItemView(category: category)
                         }.listRowBackground(Color.init(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.5))
-                        
                     }.navigationBarTitle("Near Me", displayMode: .large)
             }
     }
