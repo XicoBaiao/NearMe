@@ -1,0 +1,51 @@
+[
+    {
+        "id" : "hotels",
+        "name" : "Hotéis",
+        "headline": "Are you dreaming of a place to stay? We are here!",
+        "image": "hotel"
+    },
+    {
+        "id" : "airports",
+        "name" : "Aeroportos",
+        "headline": "Bringing people’s worlds closer together",
+        "image": "airport"
+    },
+    {
+        "id" : "bars",
+        "name" : "Bares",
+        "headline": "The happy hours you deserve",
+        "image": "bar"
+    },
+    {
+        "id" : "gas_stations",
+        "name" : "Bombas de Gasolina",
+        "headline": "I’ll Keep Your Engine Running",
+        "image": "gas_station"
+    },
+    {
+        "id" : "cinemas",
+        "name" : "Cinemas",
+        "headline": "Are you searching for the best theater? Come here",
+        "image": "cinema"
+    },
+    {
+        "id" : "supermarkets",
+        "name" : "Supermercados",
+        "headline": "Get your essential groceries here!",
+        "image": "supermarket"
+    },
+    {
+        "id" : "nightclubs",
+        "name" : "Discotecas",
+        "headline": "Life is too short, live it with all you want",
+        "image": "nightclub"
+    },
+    {
+        "id" : "kartings",
+        "name" : "Karts",
+        "headline": "Catch Me If You Can",
+        "image": "karting"
+    },
+    
+]

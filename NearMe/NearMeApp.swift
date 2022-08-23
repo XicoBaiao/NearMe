@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import GoogleMaps
+import GooglePlaces
 
 @main
 struct NearMeApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    init() {
+        GMSServices.provideAPIKey(Environment.googleApiKey)
+        
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
         }
     }
 }
